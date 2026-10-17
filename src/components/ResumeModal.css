@@ -1,0 +1,95 @@
+/* =====================================================================
+   RESUME MODAL — CLAYMORPHIC OVERLAY
+   ===================================================================== */
+
+.resume-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(23, 19, 17, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.3s var(--ease-smooth);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.resume-modal-card {
+  max-width: 500px;
+  width: 100%;
+  padding: 36px 30px;
+  text-align: center;
+  animation: modalPop 0.35s var(--ease-bounce);
+  border: 2px solid var(--border-clay);
+}
+
+@keyframes modalPop {
+  from { transform: scale(0.92) translateY(12px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.resume-modal-badge {
+  color: var(--c-burnt-sienna);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.resume-modal-title {
+  font-size: 2rem;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+}
+
+.resume-modal-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.resume-modal-details {
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.resume-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.resume-detail-row:last-child {
+  border-bottom: none;
+}
+
+.resume-detail-label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.resume-detail-val {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.resume-detail-val.highlight {
+  color: var(--c-burnt-sienna);
+}
+
+.resume-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,457 @@
+/* =====================================================================
+   RATIKANTA SAHOO — DESIGN SYSTEM & TOKENS
+   Strict 6-color Palette:
+   1. White:              #FFFFFF
+   2. Black:              #171311
+   3. Burgundy:           #641E32
+   4. Skin:               #D9A17E
+   5. Cream:              #F4EBDD
+   6. Burnt Sienna:       #C15A32
+   Aesthetics: Claymorphism + Editorial Premium Typography
+   ===================================================================== */
+
+:root {
+  /* Color Palette */
+  --c-white: #FFFFFF;
+  --c-black: #171311;
+  --c-burgundy: #641E32;
+  --c-skin: #D9A17E;
+  --c-cream: #F4EBDD;
+  --c-burnt-sienna: #C15A32;
+
+  /* RGB equivalents for alpha translucency */
+  --rgb-white: 255, 255, 255;
+  --rgb-black: 23, 19, 17;
+  --rgb-burgundy: 100, 30, 50;
+  --rgb-skin: 217, 161, 126;
+  --rgb-cream: 244, 235, 221;
+  --rgb-burnt-sienna: 193, 90, 50;
+
+  /* A light skin-tone wash keeps the warm palette while preserving contrast. */
+  --bg-primary: color-mix(in srgb, var(--c-skin) 38%, var(--c-cream));
+  --bg-surface: var(--c-white);
+  --bg-secondary: color-mix(in srgb, var(--c-skin) 32%, var(--c-cream));
+  --bg-elevated: var(--c-white);
+  --bg-burgundy-tint: rgba(var(--rgb-burgundy), 0.08);
+  --glass-surface: rgba(var(--rgb-white), 0.68);
+  --glass-border: rgba(var(--rgb-white), 0.88);
+
+  --text-primary: var(--c-black);
+  --text-heading: var(--c-burgundy);
+  --text-muted: rgba(var(--rgb-black), 0.65);
+  --text-subtle: rgba(var(--rgb-black), 0.45);
+  --text-on-dark: var(--c-cream);
+  --text-accent: var(--c-burnt-sienna);
+
+  --border-light: rgba(var(--rgb-black), 0.08);
+  --border-medium: rgba(var(--rgb-burgundy), 0.15);
+  --border-clay: rgba(var(--rgb-white), 0.78);
+
+  /* Fonts */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+
+  /* Claymorphic Shadows - Light Mode */
+  --clay-card-shadow: 
+    10px 14px 28px rgba(var(--rgb-black), 0.07),
+    -6px -6px 16px rgba(var(--rgb-white), 0.9),
+    inset 2px 2px 4px rgba(var(--rgb-white), 0.85),
+    inset -3px -3px 8px rgba(var(--rgb-burgundy), 0.05);
+
+  --clay-card-hover: 
+    14px 20px 36px rgba(var(--rgb-black), 0.11),
+    -8px -8px 20px rgba(var(--rgb-white), 0.95),
+    inset 2px 2px 4px rgba(var(--rgb-white), 0.9),
+    inset -3px -3px 8px rgba(var(--rgb-burgundy), 0.08);
+
+  --clay-button-primary:
+    0 10px 24px rgba(var(--rgb-burnt-sienna), 0.35),
+    -2px -2px 8px rgba(var(--rgb-white), 0.3),
+    inset 2px 2px 4px rgba(var(--rgb-white), 0.45),
+    inset -3px -3px 6px rgba(var(--rgb-black), 0.28);
+
+  --clay-button-burgundy:
+    0 10px 24px rgba(var(--rgb-burgundy), 0.35),
+    -2px -2px 8px rgba(var(--rgb-white), 0.2),
+    inset 2px 2px 4px rgba(var(--rgb-white), 0.35),
+    inset -3px -3px 6px rgba(var(--rgb-black), 0.35);
+
+  --clay-button-cream:
+    6px 8px 18px rgba(var(--rgb-black), 0.08),
+    -4px -4px 12px rgba(var(--rgb-white), 0.9),
+    inset 2px 2px 4px rgba(var(--rgb-white), 0.9),
+    inset -2px -2px 6px rgba(var(--rgb-burgundy), 0.08);
+
+  --clay-inset-well:
+    inset 4px 4px 10px rgba(var(--rgb-black), 0.08),
+    inset -3px -3px 8px rgba(var(--rgb-white), 0.8);
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Dark Mode (Black, Burgundy, Cream, Burnt Sienna) */
+[data-theme='dark'] {
+  --bg-primary: var(--c-black);
+  --bg-surface: #221B18;
+  --bg-secondary: #2C2320;
+  --bg-elevated: #28201C;
+  --bg-burgundy-tint: rgba(var(--rgb-burgundy), 0.25);
+  --glass-surface: rgba(40, 32, 28, 0.68);
+  --glass-border: rgba(var(--rgb-cream), 0.16);
+
+  --text-primary: var(--c-cream);
+  --text-heading: var(--c-cream);
+  --text-muted: rgba(var(--rgb-cream), 0.7);
+  --text-subtle: rgba(var(--rgb-cream), 0.45);
+  --text-accent: var(--c-burnt-sienna);
+
+  --border-light: rgba(var(--rgb-cream), 0.1);
+  --border-medium: rgba(var(--rgb-burgundy), 0.35);
+  --border-clay: rgba(var(--rgb-burgundy), 0.4);
+
+  --clay-card-shadow: 
+    10px 14px 28px rgba(0, 0, 0, 0.5),
+    -4px -4px 12px rgba(var(--rgb-burgundy), 0.15),
+    inset 2px 2px 4px rgba(var(--rgb-cream), 0.08),
+    inset -3px -3px 8px rgba(0, 0, 0, 0.6);
+
+  --clay-card-hover: 
+    14px 22px 38px rgba(0, 0, 0, 0.65),
+    -6px -6px 16px rgba(var(--rgb-burnt-sienna), 0.2),
+    inset 2px 2px 4px rgba(var(--rgb-cream), 0.12),
+    inset -3px -3px 8px rgba(0, 0, 0, 0.7);
+
+  --clay-button-cream:
+    6px 8px 20px rgba(0, 0, 0, 0.4),
+    -3px -3px 10px rgba(var(--rgb-burgundy), 0.2),
+    inset 2px 2px 4px rgba(var(--rgb-cream), 0.2),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.5);
+
+  --clay-inset-well:
+    inset 4px 4px 12px rgba(0, 0, 0, 0.6),
+    inset -2px -2px 6px rgba(var(--rgb-cream), 0.05);
+}
+
+/* =====================================================================
+   GLOBAL RESET & BASE STYLES
+   ===================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: clip;
+  transition: background-color 0.4s var(--ease-smooth), color 0.4s var(--ease-smooth);
+  position: relative;
+}
+
+/* Subtle paper-grain texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.012;
+  background-image: radial-gradient(var(--c-black) 1px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+[data-theme='dark'] body::before {
+  opacity: 0.018;
+  background-image: radial-gradient(var(--c-cream) 1px, transparent 1px);
+}
+
+/* =====================================================================
+   TYPOGRAPHY
+   ===================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-primary);
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* =====================================================================
+   CLAYMORPHISM CORE CLASSES
+   ===================================================================== */
+
+.clay-card {
+  background: var(--glass-surface);
+  border-radius: 28px;
+  box-shadow:
+    0 16px 42px rgba(var(--rgb-burgundy), 0.07),
+    var(--clay-card-shadow);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  transition:
+    transform 0.35s var(--ease-smooth),
+    box-shadow 0.35s var(--ease-smooth),
+    border-color 0.35s ease;
+  position: relative;
+}
+
+.clay-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 14%;
+  right: 14%;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(var(--rgb-white), 0.95), transparent);
+}
+
+.clay-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--clay-card-hover);
+  border-color: rgba(var(--rgb-burnt-sienna), 0.32);
+}
+
+.clay-card:focus-within {
+  border-color: rgba(var(--rgb-burnt-sienna), 0.5);
+  box-shadow:
+    0 0 0 3px rgba(var(--rgb-burnt-sienna), 0.12),
+    var(--clay-card-shadow);
+}
+
+.clay-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  padding: 14px 28px;
+  border-radius: 14px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease-bounce), box-shadow 0.2s var(--ease-smooth), background-color 0.2s ease;
+  user-select: none;
+}
+
+.clay-btn:active {
+  transform: scale(0.97) translateY(2px);
+}
+
+.clay-btn-sienna {
+  background: var(--c-burnt-sienna);
+  color: var(--c-white);
+  box-shadow: var(--clay-button-primary);
+}
+
+.clay-btn-sienna:hover {
+  background: #B35028;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(var(--rgb-burnt-sienna), 0.42),
+              -2px -2px 8px rgba(var(--rgb-white), 0.35),
+              inset 2px 2px 4px rgba(var(--rgb-white), 0.5),
+              inset -3px -3px 6px rgba(var(--rgb-black), 0.32);
+}
+
+.clay-btn-burgundy {
+  background: var(--c-burgundy);
+  color: var(--c-cream);
+  box-shadow: var(--clay-button-burgundy);
+}
+
+.clay-btn-burgundy:hover {
+  background: #541728;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(var(--rgb-burgundy), 0.45),
+              -2px -2px 8px rgba(var(--rgb-white), 0.25),
+              inset 2px 2px 4px rgba(var(--rgb-white), 0.4),
+              inset -3px -3px 6px rgba(var(--rgb-black), 0.4);
+}
+
+.clay-btn-secondary {
+  background: var(--glass-surface);
+  color: var(--text-primary);
+  box-shadow: var(--clay-button-cream);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+}
+
+.clay-btn-secondary:hover {
+  transform: translateY(-2px);
+  color: var(--c-burnt-sienna);
+}
+
+.clay-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: var(--glass-surface);
+  color: var(--c-burgundy);
+  box-shadow: 4px 6px 14px rgba(var(--rgb-black), 0.06),
+              -2px -2px 8px rgba(var(--rgb-white), 0.8),
+              inset 1px 1px 2px rgba(var(--rgb-white), 0.9),
+              inset -2px -2px 4px rgba(var(--rgb-burgundy), 0.06);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+}
+
+[data-theme='dark'] .clay-badge {
+  color: var(--c-burnt-sienna);
+  box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.4),
+              -2px -2px 6px rgba(var(--rgb-burgundy), 0.2),
+              inset 1px 1px 2px rgba(var(--rgb-cream), 0.1),
+              inset -2px -2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Shared editorial heading treatment for every portfolio section. */
+.section-header {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.section-header > .clay-badge {
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+  margin-bottom: 16px;
+  background: linear-gradient(115deg, var(--text-heading) 8%, var(--c-burnt-sienna) 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@supports not (-webkit-background-clip: text) {
+  .section-title {
+    color: var(--text-heading);
+  }
+}
+
+.section-subtitle {
+  max-width: 660px;
+  margin: 0 auto;
+  color: var(--text-muted);
+  font-size: clamp(0.96rem, 1.45vw, 1.08rem);
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+/* Clay Inset Well for inputs or subtle recessed containers */
+.clay-inset {
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  box-shadow: var(--clay-inset-well);
+  border: 1px solid var(--border-light);
+}
+
+/* Custom Scrollbar in Approved Colors */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-burgundy);
+  border-radius: 5px;
+  border: 2px solid var(--bg-primary);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-burnt-sienna);
+}
+
+/* Selection */
+::selection {
+  background: var(--c-burgundy);
+  color: var(--c-cream);
+}
+
+/* Visible Focus States for Keyboard Navigation */
+:focus-visible {
+  outline: 2px solid var(--c-burnt-sienna) !important;
+  outline-offset: 3px !important;
+}
+
+img, canvas, video, svg { max-width: 100%; }
+input, textarea, button { max-width: 100%; }
+.legal-page, .not-found-page { min-height: 100vh; padding: 32px 6vw 72px; background: var(--bg-primary); }
+.legal-home { display: inline-block; margin-bottom: 56px; font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--text-heading); text-decoration: none; }
+.legal-page main { max-width: 760px; margin: 0 auto; }
+.legal-page h1, .not-found-page h1 { margin: 14px 0 12px; font-size: clamp(2.3rem, 7vw, 4rem); }
+.legal-page h2 { margin: 32px 0 8px; font-size: 1.4rem; }
+.legal-page p, .not-found-page p { line-height: 1.75; color: var(--text-muted); margin-bottom: 12px; }
+.legal-page a:not(.legal-home), .footer-legal-links a { color: var(--c-burnt-sienna); }
+.legal-back { display: inline-block; margin-top: 32px; }
+.not-found-page { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; max-width: 720px; margin: auto; }
+.not-found-page .clay-btn { margin-top: 18px; }
+.footer-legal-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 14px; font-size: .8rem; }
+
+@media (max-width: 600px) {
+  .legal-page { padding: 24px 20px 48px; }
+  .legal-home { margin-bottom: 36px; }
+  .footer-legal-links { justify-content: center; }
+  .clay-card { border-radius: 14px; }
+  .clay-inset { border-radius: 8px; }
+  .section-header { margin-bottom: 34px; }
+  .section-title { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+}
+
+/* Accessibility: Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,87 @@
+/* =====================================================================
+   SKILLS SECTION STYLING
+   ===================================================================== */
+
+.skills-section {
+  padding: 100px 5%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 28px;
+}
+
+.skill-category-card {
+  padding: 34px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 26px;
+}
+
+.skill-card-top {
+  margin-bottom: 22px;
+}
+
+.skill-card-tag {
+  color: var(--c-burnt-sienna);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.skill-card-role {
+  font-size: 1.45rem;
+  color: var(--text-heading);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.skill-card-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.skill-badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 18px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-burnt-sienna);
+}
+
+.skill-pill-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-burnt-sienna);
+}
+
+.skill-pill-text {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

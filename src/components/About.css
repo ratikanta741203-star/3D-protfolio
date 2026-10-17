@@ -1,0 +1,236 @@
+/* =====================================================================
+   ABOUT SECTION STYLING
+   ===================================================================== */
+
+.about-section {
+  padding: 100px 5% 40px 5%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.35fr;
+  gap: 36px;
+  align-items: stretch;
+  margin-bottom: 36px;
+}
+
+/* Real Portrait Photograph Card */
+.about-portrait-card {
+  padding: 34px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  border-radius: 28px;
+  border: 1.5px solid var(--border-clay);
+}
+
+.portrait-image-wrapper {
+  width: 220px;
+  height: 270px;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 8px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portrait-real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(var(--rgb-black), 0.15);
+  transition: transform 0.4s var(--ease-smooth);
+}
+
+.about-portrait-card:hover .portrait-real-img {
+  transform: scale(1.03);
+}
+
+.portrait-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.portrait-badge-tag {
+  color: var(--c-burnt-sienna);
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+.portrait-name {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--text-heading);
+  line-height: 1.2;
+}
+
+.portrait-role {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.portrait-loc-pill {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--c-burgundy);
+  margin-top: 4px;
+}
+
+[data-theme='dark'] .portrait-loc-pill {
+  color: var(--c-burnt-sienna);
+}
+
+/* Main Bio Card */
+.about-main-card {
+  padding: 44px 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 28px;
+  border: 1.5px solid var(--border-clay);
+}
+
+.card-tag {
+  color: var(--c-burnt-sienna);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.about-card-title {
+  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+  color: var(--text-heading);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.lead-p {
+  font-size: 1.08rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.75;
+  margin-bottom: 26px;
+}
+
+.about-key-details {
+  padding: 20px 24px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.detail-label {
+  font-size: 0.72rem;
+  color: var(--text-subtle);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.detail-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+.detail-value.highlight {
+  color: var(--c-burgundy);
+}
+
+[data-theme='dark'] .detail-value.highlight {
+  color: var(--c-cream);
+}
+
+.detail-value.highlight-sienna {
+  color: var(--c-burnt-sienna);
+}
+
+/* Principles / Disciplines Card */
+.about-principles-wrapper {
+  width: 100%;
+}
+
+.about-highlights-card {
+  padding: 40px 36px;
+  border-radius: 28px;
+  border: 1.5px solid var(--border-clay);
+}
+
+.highlights-title {
+  font-size: 1.6rem;
+  color: var(--text-heading);
+  margin-bottom: 24px;
+}
+
+.highlight-points-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.highlight-point-item {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px 20px;
+  border-radius: 20px;
+}
+
+.point-icon {
+  font-size: 0.8rem;
+  align-self: flex-start;
+  padding: 6px 12px;
+}
+
+.point-heading {
+  font-size: 1.08rem;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+}
+
+.point-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .highlight-points-grid {
+    grid-template-columns: 1fr;
+  }
+  .detail-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .detail-value {
+    text-align: left;
+  }
+}

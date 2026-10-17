@@ -1,0 +1,206 @@
+/* =====================================================================
+   CINEMATIC LOADING SCREEN — RATIKANTA SAHOO
+   Strict Colors:
+   - Black:         #171311 (Background)
+   - Cream:         #F4EBDD (Subtitles & accents)
+   - White:         #FFFFFF (Main Name)
+   - Burgundy:      #641E32 (Border details, ambient glow)
+   - Burnt Sienna:  #C15A32 (Progress bar & counter highlight)
+   - Skin:          #D9A17E (Subtle badge tone)
+   ===================================================================== */
+
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background-color: #171311;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1), transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: opacity, transform;
+}
+
+.loader-overlay.is-exiting {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+/* Ambient glow & editorial grid */
+.loader-ambient {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(100, 30, 50, 0.35) 0%, rgba(193, 90, 50, 0.1) 45%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  animation: loaderPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes loaderPulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 0.95; }
+}
+
+.loader-frame {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 640px;
+  width: 90%;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+/* Claymorphic badge */
+.loader-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(100, 30, 50, 0.25);
+  border: 1px solid rgba(100, 30, 50, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), inset 1px 1px 2px rgba(244, 235, 221, 0.2);
+  color: #D9A17E;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 24px;
+}
+
+.loader-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #C15A32;
+  box-shadow: 0 0 8px #C15A32;
+  animation: loaderBlink 1s infinite alternate;
+}
+
+@keyframes loaderBlink {
+  from { opacity: 0.4; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+/* Centered Main Name */
+.loader-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.loader-subtitle {
+  font-family: 'Roboto Mono', monospace;
+  font-size: clamp(0.72rem, 1.8vw, 0.88rem);
+  letter-spacing: 0.22em;
+  color: #F4EBDD;
+  opacity: 0.85;
+  margin-bottom: 38px;
+  text-transform: uppercase;
+}
+
+/* Large Animated Percentage Counter */
+.loader-counter-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.loader-counter {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(3.2rem, 8vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1;
+  color: #F4EBDD;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+
+.loader-counter-unit {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #C15A32;
+}
+
+/* Claymorphic Progress Track and Burnt Sienna Bar */
+.loader-bar-track {
+  width: 100%;
+  max-width: 440px;
+  height: 10px;
+  border-radius: 10px;
+  background: rgba(23, 19, 17, 0.8);
+  border: 1px solid rgba(100, 30, 50, 0.4);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.8), inset -1px -1px 3px rgba(244, 235, 221, 0.05);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #641E32 0%, #C15A32 80%, #D9A17E 100%);
+  box-shadow: 0 0 14px rgba(193, 90, 50, 0.6), inset 1px 1px 2px rgba(255, 255, 255, 0.4);
+  transition: width 0.08s ease-out;
+  position: relative;
+}
+
+/* Micro Status indicator */
+.loader-status-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: rgba(244, 235, 221, 0.6);
+  text-transform: uppercase;
+}
+
+/* Cinematic corner brackets in burgundy */
+.loader-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: rgba(100, 30, 50, 0.6);
+  border-style: solid;
+  pointer-events: none;
+}
+.loader-corner.top-left {
+  top: 32px;
+  left: 32px;
+  border-width: 2px 0 0 2px;
+}
+.loader-corner.top-right {
+  top: 32px;
+  right: 32px;
+  border-width: 2px 2px 0 0;
+}
+.loader-corner.bottom-left {
+  bottom: 32px;
+  left: 32px;
+  border-width: 0 0 2px 2px;
+}
+.loader-corner.bottom-right {
+  bottom: 32px;
+  right: 32px;
+  border-width: 0 2px 2px 0;
+}
+
+@media (max-width: 600px) {
+  .loader-corner {
+    display: none;
+  }
+}

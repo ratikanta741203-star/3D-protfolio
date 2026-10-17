@@ -1,0 +1,85 @@
+/* =====================================================================
+   WHAT I DO — INTERACTIVE 3D TILT CARDS
+   ===================================================================== */
+
+.what-i-do-section {
+  padding: 80px 5% 100px 5%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.what-card {
+  padding: 38px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 28px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  border: 1.5px solid var(--border-clay);
+}
+
+.what-card:hover {
+  border-color: rgba(var(--rgb-burnt-sienna), 0.4);
+}
+
+.what-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.what-icon-wrapper {
+  color: var(--c-burnt-sienna);
+  padding: 10px 14px;
+}
+
+.what-tag {
+  color: var(--c-burgundy);
+  font-weight: 700;
+}
+
+[data-theme='dark'] .what-tag {
+  color: var(--c-burnt-sienna);
+}
+
+.what-card-title {
+  font-size: 1.55rem;
+  color: var(--text-heading);
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.what-card-desc {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.what-card-footer {
+  padding: 16px 20px;
+  border-radius: 18px;
+}
+
+.what-details-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+  .what-grid {
+    grid-template-columns: 1fr;
+  }
+}

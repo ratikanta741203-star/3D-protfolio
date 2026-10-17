@@ -1,0 +1,429 @@
+/* =====================================================================
+   EXPERIENCE & EDUCATION TIMELINE STYLING
+   Strict 6-color Palette + Editorial Aesthetics
+   ===================================================================== */
+
+.editorial-records-wrapper {
+  position: relative;
+}
+
+/* =====================================================================
+   EXPERIENCE SECTION & TIMELINE
+   ===================================================================== */
+
+.experience-section {
+  padding: 100px 5% 60px 5%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.editorial-timeline {
+  position: relative;
+  margin-top: 50px;
+  padding: 20px 0;
+}
+
+/* Center timeline line in Burgundy */
+.timeline-center-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, var(--c-burgundy) 0%, var(--c-burnt-sienna) 80%, transparent 100%);
+  opacity: 0.35;
+  border-radius: 2px;
+}
+
+.timeline-entry {
+  position: relative;
+  display: flex;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.timeline-entry:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-entry.entry-left {
+  justify-content: flex-start;
+  padding-right: 50%;
+}
+
+.timeline-entry.entry-right {
+  justify-content: flex-end;
+  padding-left: 50%;
+}
+
+/* Burgundy Timeline Nodes with Burnt Sienna Ring */
+.timeline-node {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 3px solid var(--c-burgundy);
+  box-shadow: 0 0 0 4px rgba(var(--rgb-burnt-sienna), 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-entry:hover .timeline-node {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 0 0 6px rgba(var(--rgb-burnt-sienna), 0.4);
+}
+
+.node-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-burnt-sienna);
+}
+
+/* Timeline Cards */
+.timeline-card {
+  width: 90%;
+  padding: 34px 30px;
+  border-radius: 26px;
+  border: 1.5px solid var(--border-clay);
+  transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth);
+}
+
+.entry-left .timeline-card {
+  margin-right: 40px;
+}
+
+.entry-right .timeline-card {
+  margin-left: 40px;
+}
+
+.timeline-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.timeline-tag {
+  color: var(--c-burnt-sienna);
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+.timeline-period {
+  color: var(--text-subtle);
+  font-size: 0.72rem;
+}
+
+.timeline-title {
+  font-size: 1.55rem;
+  color: var(--text-heading);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.timeline-role {
+  font-size: 1rem;
+  color: var(--c-burnt-sienna);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.timeline-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  line-height: 1.55;
+}
+
+.highlight-bullet {
+  color: var(--c-burnt-sienna);
+  font-weight: 800;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* =====================================================================
+   EDUCATION SECTION & GRID
+   ===================================================================== */
+
+.education-section {
+  padding: 60px 5% 100px 5%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 32px;
+  margin-bottom: 70px;
+}
+
+.education-card {
+  padding: 36px 30px;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1.5px solid var(--border-clay);
+  transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-4px);
+}
+
+.edu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.edu-period-tag {
+  color: var(--c-burnt-sienna);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.edu-status-badge {
+  font-size: 0.7rem;
+  background: rgba(var(--rgb-burgundy), 0.1);
+  color: var(--c-burgundy);
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+[data-theme='dark'] .edu-status-badge {
+  background: rgba(var(--rgb-burgundy), 0.3);
+  color: var(--c-cream);
+}
+
+.edu-degree {
+  font-size: 1.45rem;
+  color: var(--text-heading);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.edu-institution {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.edu-location {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.edu-score-box {
+  padding: 12px 18px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.score-label {
+  font-size: 0.7rem;
+  color: var(--text-subtle);
+  font-weight: 600;
+}
+
+.score-val {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--c-burnt-sienna);
+}
+
+.edu-details {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* =====================================================================
+   CERTIFICATIONS SUB-BLOCK
+   ===================================================================== */
+
+.certifications-sub-block {
+  margin-top: 30px;
+}
+
+.cert-sub-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cert-sub-tag {
+  color: var(--c-burnt-sienna);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.cert-sub-title {
+  font-size: 2.2rem;
+  color: var(--text-heading);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.cert-sub-desc {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.cert-card {
+  padding: 32px 26px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1.5px solid var(--border-clay);
+}
+
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.cert-issuer-badge {
+  color: var(--c-burnt-sienna);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.cert-status-tag {
+  color: var(--c-burgundy);
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+[data-theme='dark'] .cert-status-tag {
+  color: var(--c-cream);
+}
+
+.cert-title {
+  font-size: 1.45rem;
+  color: var(--text-heading);
+  margin-bottom: 10px;
+}
+
+.cert-scope {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.cert-card-footer {
+  margin-top: auto;
+}
+
+.cert-btn {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.82rem;
+}
+
+.cert-verified-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 16px;
+}
+
+.verified-icon {
+  color: var(--c-burnt-sienna);
+  font-weight: 900;
+  font-size: 0.9rem;
+}
+
+.verified-text {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+/* =====================================================================
+   RESPONSIVE ADJUSTMENTS
+   ===================================================================== */
+
+@media (max-width: 900px) {
+  .timeline-center-line {
+    left: 20px;
+  }
+  .timeline-node {
+    left: 20px;
+  }
+  .timeline-entry.entry-left,
+  .timeline-entry.entry-right {
+    padding-left: 50px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+  .entry-left .timeline-card,
+  .entry-right .timeline-card {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .education-grid,
+  .certifications-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .education-card,
+  .cert-card {
+    min-width: 0;
+  }
+}
