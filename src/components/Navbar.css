@@ -53,18 +53,30 @@
 }
 
 .brand-badge {
+  position: relative;
+  display: block;
+  overflow: hidden;
   width: 36px;
   height: 36px;
-  border-radius: 12px;
-  background: var(--c-burgundy);
-  color: var(--c-cream);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: 900;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 10px rgba(var(--rgb-burgundy), 0.35), inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+  flex: 0 0 36px;
+  border: 2px solid rgba(var(--rgb-white), 0.88);
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--c-burnt-sienna), var(--c-burgundy));
+  box-shadow: 0 4px 12px rgba(var(--rgb-burgundy), 0.32);
+}
+
+.brand-badge img {
+  position: absolute;
+  top: -2%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  max-width: none;
+  object-fit: cover;
+}
+
+[data-theme='dark'] .brand-badge {
+  border-color: rgba(var(--rgb-cream), 0.72);
 }
 
 .brand-name {
@@ -306,6 +318,6 @@
   .navbar-header { padding: 0 8px; }
   .navbar-pill { gap: 8px; padding: 6px 10px; }
   .brand-name { font-size: 0.78rem; }
-  .brand-badge { width: 32px; height: 32px; }
+  .brand-badge { width: 32px; height: 32px; flex-basis: 32px; }
   .mobile-menu-panel { width: calc(100vw - 24px); }
 }

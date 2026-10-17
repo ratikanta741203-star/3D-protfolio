@@ -94,7 +94,9 @@ export default function Navbar() {
           className="navbar-brand"
           aria-label="Ratikanta Sahoo Portfolio Home"
         >
-          <div className="brand-badge">RS</div>
+          <span className="brand-badge" aria-hidden="true">
+            <img src="/images/avatar-developer-3d.webp" alt="" />
+          </span>
           <span className="brand-name">RATIKANTA SAHOO</span>
         </a>
 

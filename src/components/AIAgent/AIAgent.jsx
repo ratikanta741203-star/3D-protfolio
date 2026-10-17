@@ -157,7 +157,11 @@ export default function AIAgent() {
             {messages.map((msg) => (
               <div key={msg.id} className={`ai-message-row ${msg.sender === 'user' ? 'row-user' : 'row-agent'}`}>
                 {msg.sender === 'agent' && (
-                  <div className="agent-mini-icon">RS</div>
+                  <img
+                    className="agent-mini-icon"
+                    src="/images/avatar-developer-3d.webp"
+                    alt=""
+                  />
                 )}
 
                 <div className={`ai-message-bubble ${msg.sender === 'user' ? 'bubble-user clay-btn-burgundy' : 'bubble-agent clay-inset'}`}>
@@ -203,7 +207,11 @@ export default function AIAgent() {
 
             {isTyping && (
               <div className="ai-message-row row-agent">
-                <div className="agent-mini-icon">RS</div>
+                <img
+                  className="agent-mini-icon"
+                  src="/images/avatar-developer-3d.webp"
+                  alt=""
+                />
                 <div className="ai-typing-indicator clay-inset">
                   <span className="typing-dot" />
                   <span className="typing-dot" />

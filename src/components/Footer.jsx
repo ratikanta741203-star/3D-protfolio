@@ -77,7 +77,9 @@ export default function Footer() {
         {/* Brand & Motto */}
         <div className="footer-brand-block">
           <a className="footer-brand-title" href="/#hero" aria-label="Ratikanta Sahoo home">
-            <div className="brand-badge">RS</div>
+            <span className="brand-badge" aria-hidden="true">
+              <img src="/images/avatar-developer-3d.webp" alt="" />
+            </span>
             <h4 className="footer-name">RATIKANTA SAHOO</h4>
           </a>
           <p className="footer-brand-subtitle">
